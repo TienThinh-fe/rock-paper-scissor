@@ -1,0 +1,112 @@
+@use "../utils";
+
+.game {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(utils.$background-from, utils.$background-to);
+}
+
+.header {
+  width: 60%;
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  transform: translateX(-50%);
+  border: 3px solid utils.$header-outline;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  &__score {
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 12px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &--title {
+      color: utils.$score-text;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+    &--number {
+      color: utils.$dark-text;
+      font-size: 3.2rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.rules-button {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  border: 3px solid utils.$header-outline;
+  padding: 8px 28px;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    padding: 8px 32px;
+  }
+}
+
+.rules-modal {
+  width: 480px;
+  height: 480px;
+  background-color: white;
+  border-radius: 12px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  &__overlay {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 32px 40px;
+    &--title {
+      color: utils.$dark-text;
+      font-size: 2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    &--close {
+      cursor: pointer;
+      padding: 4px;
+    }
+  }
+  &__body {
+    width: 70%;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
