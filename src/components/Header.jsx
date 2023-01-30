@@ -1,7 +1,5 @@
 import Logo from "../assets/logo.svg";
 
-import "./styles.scss";
-
 export function Header() {
   return (
     <header className="header">

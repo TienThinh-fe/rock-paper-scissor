@@ -1,5 +1,3 @@
-import "./styles.scss";
-
 import { Header } from "./Header";
 import { RulesButton } from "./RulesButton";
 import { UserPick } from "./UserPick";

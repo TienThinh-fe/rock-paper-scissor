@@ -1,5 +1,4 @@
 import { createPortal } from "react-dom";
-import "./styles.scss";
 
 import IconClose from "../assets/icon-close.svg";
 import ImageRules from "../assets/image-rules.svg";
