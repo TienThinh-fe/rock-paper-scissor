@@ -1,13 +1,15 @@
 import "./styles.scss";
 
-import Header from "./Header";
-import RulesButton from "./RulesButton";
+import { Header } from "./Header";
+import { RulesButton } from "./RulesButton";
+import { UserPick } from "./UserPick";
 
-export default function Game() {
+export function Game() {
   return (
     <div className="game">
       <Header />
       <RulesButton />
+      <UserPick />
     </div>
   );
 }

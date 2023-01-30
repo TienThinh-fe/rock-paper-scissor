@@ -1,7 +1,7 @@
 import { useState } from "react";
-import RulesModal from "./RulesModal";
+import { RulesModal } from "./RulesModal";
 
-export default function RulesButton() {
+export function RulesButton() {
   const [showRules, setShowRules] = useState(false);
 
   return (

@@ -2,7 +2,7 @@ import Logo from "../assets/logo.svg";
 
 import "./styles.scss";
 
-export default function Header() {
+export function Header() {
   return (
     <header className="header">
       <div className="header__logo">

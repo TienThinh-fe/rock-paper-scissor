@@ -4,7 +4,7 @@ import "./styles.scss";
 import IconClose from "../assets/icon-close.svg";
 import ImageRules from "../assets/image-rules.svg";
 
-export default function RulesModal({ onClose }) {
+export function RulesModal({ onClose }) {
   return createPortal(
     <>
       <div className="rules-modal__overlay" onClick={onClose}></div>
