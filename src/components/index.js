@@ -5,3 +5,4 @@ export * from "./Header";
 export * from "./RulesButton";
 export * from "./RulesModal";
 export * from "./UserPick";
+export * from "./Result";
