@@ -10,6 +10,7 @@ import IconScissors from "../assets/icon-scissors.svg";
 export function Result() {
   const userPick = useStore((state) => state.userPick);
   const setIsPicked = useStore((state) => state.setIsPicked);
+  const [score, setScore] = useStore((state) => [state.score, state.setScore]);
 
   const [imgSrc, setImgSrc] = useState(IconPaper);
   const [houseImgSrc, setHouseImgSrc] = useState(IconPaper);
@@ -55,7 +56,16 @@ export function Result() {
         break;
     }
 
-    setResult(() => GetResult(userPick, housePick));
+    const gameResult = GetResult(userPick, housePick);
+
+    // Update score
+    if (gameResult === "You won") {
+      setScore(score + 1);
+    } else if (gameResult === "You lose" && score > 0) {
+      setScore(score - 1);
+    }
+
+    setResult(gameResult);
   }, [housePicked]);
 
   return (
