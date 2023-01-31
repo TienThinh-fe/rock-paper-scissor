@@ -17,6 +17,7 @@ export function Result() {
   const [housePick, setHousePick] = useState("");
   const [housePicked, setHousePicked] = useState(false);
   const [result, setResult] = useState("");
+  const [containerStyle, setContainerStyle] = useState({ width: "40%" });
 
   useEffect(() => {
     switch (userPick) {
@@ -66,6 +67,7 @@ export function Result() {
     }
 
     setResult(gameResult);
+    setContainerStyle({ width: "60%" });
   }, [housePicked]);
 
   useEffect(() => {
@@ -74,7 +76,7 @@ export function Result() {
   }, [score]);
 
   return (
-    <div className="result" style={{ width: "64%" }}>
+    <div className="result" style={containerStyle}>
       <div className="result__you">
         <div
           className="result__you__title"
@@ -93,17 +95,19 @@ export function Result() {
           </div>
         ) : null}
       </div>
-      <div className="result__show">
-        <div className="result__show__title">
-          {housePicked ? result : "..."}
+      {result ? (
+        <div className="result__show">
+          <div className="result__show__title">
+            {housePicked ? result : "..."}
+          </div>
+          <div
+            className="result__show__play-again"
+            onClick={() => setIsPicked(false)}
+          >
+            <span>Play Again</span>
+          </div>
         </div>
-        <div
-          className="result__show__play-again"
-          onClick={() => setIsPicked(false)}
-        >
-          <span>Play Again</span>
-        </div>
-      </div>
+      ) : null}
       <div className="result__house">
         <div className="result__house__title">
           {housePicked ? "The house picked" : "The house is picking"}

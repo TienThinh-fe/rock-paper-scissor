@@ -180,6 +180,7 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  transition: all 0.2s ease-in-out;
   &__you,
   &__house {
     position: relative;
