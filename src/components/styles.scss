@@ -40,6 +40,32 @@
       font-weight: 700;
     }
   }
+
+  @media only screen and (max-width: utils.$mobile-width) {
+    width: 80%;
+    padding: 12px;
+    top: 32px;
+    &__logo {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      img {
+        width: 70%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+
+    &__score {
+      padding: 12px 24px;
+      &--title {
+        font-size: 0.8rem;
+      }
+      &--number {
+        font-size: 3rem;
+      }
+    }
+  }
 }
 
 .rules-button {
