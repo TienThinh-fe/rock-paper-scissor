@@ -5,7 +5,23 @@ import IconScissors from "../assets/icon-scissors.svg";
 
 import { Pick } from "./Pick";
 
+import useStore from "../store";
+
 export function UserPick() {
+  const [userPick, setUserPick] = useStore((state) => [
+    state.userPick,
+    state.setUserPick,
+  ]);
+  const [isPicked, setIsPicked] = useStore((state) => [
+    state.isPicked,
+    state.setIsPicked,
+  ]);
+
+  const handlePick = (pick) => {
+    setUserPick(pick);
+    setIsPicked(true);
+  };
+
   return (
     <>
       <div className="user-pick__background">
@@ -14,13 +30,25 @@ export function UserPick() {
       <div className="user-pick">
         <div className="user-pick__list">
           <div className="user-pick__list--item">
-            <Pick imageSrc={IconPaper} type="Paper" />
+            <Pick
+              imageSrc={IconPaper}
+              type="Paper"
+              handleClick={() => handlePick("Paper")}
+            />
           </div>
           <div className="user-pick__list--item">
-            <Pick imageSrc={IconScissors} type="Scissors" />
+            <Pick
+              imageSrc={IconScissors}
+              type="Scissors"
+              handleClick={() => handlePick("Scissors")}
+            />
           </div>
           <div className="user-pick__list--item">
-            <Pick imageSrc={IconRock} type="Rock" />
+            <Pick
+              imageSrc={IconRock}
+              type="Rock"
+              handleClick={() => handlePick("Rock")}
+            />
           </div>
         </div>
       </div>

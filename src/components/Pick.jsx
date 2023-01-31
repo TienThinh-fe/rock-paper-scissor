@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-export function Pick({ imageSrc, type }) {
-  const [typeClass, setTypeClass] = useState("pick pick--paper");
+export function Pick({ imageSrc, type, handleClick }) {
+  const [typeClass, setTypeClass] = useState("pick");
 
   useEffect(() => {
     switch (type) {
@@ -20,7 +20,7 @@ export function Pick({ imageSrc, type }) {
   }, []);
 
   return (
-    <div className={typeClass}>
+    <div className={typeClass} onClick={handleClick}>
       <div className="pick__image">
         <img src={imageSrc} alt="Pick" />
       </div>
