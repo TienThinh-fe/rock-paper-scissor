@@ -68,6 +68,11 @@ export function Result() {
     setResult(gameResult);
   }, [housePicked]);
 
+  useEffect(() => {
+    // Save score to local storage
+    localStorage.setItem("score", score);
+  }, [score]);
+
   return (
     <div className="result" style={{ width: "64%" }}>
       <div className="result__you">

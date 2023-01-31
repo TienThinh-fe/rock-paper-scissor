@@ -1,9 +1,18 @@
+import { useEffect } from "react";
 import Logo from "../assets/logo.svg";
 
 import useStore from "../store";
 
 export function Header() {
-  const score = useStore((state) => state.score);
+  const [score, setScore] = useStore((state) => [state.score, state.setScore]);
+
+  useEffect(() => {
+    // check local storage for score
+    const localScore = localStorage.getItem("score");
+    if (localScore) {
+      setScore(parseInt(localScore));
+    }
+  }, []);
 
   return (
     <header className="header">
