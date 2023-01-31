@@ -78,10 +78,7 @@ export function Result() {
       <div className="result__you">
         <div
           className="result__you__title"
-          onClick={() => {
-            console.log(1);
-            setHousePicked(true);
-          }}
+          onClick={() => setHousePicked(true)}
         >
           You Picked
         </div>
