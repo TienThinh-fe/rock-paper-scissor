@@ -20,8 +20,8 @@ export function Pick({ imageSrc, type, handleClick }) {
   }, []);
 
   return (
-    <div className={typeClass} onClick={handleClick}>
-      <div className="pick__image">
+    <div className={typeClass}>
+      <div className="pick__image" onClick={handleClick}>
         <img src={imageSrc} alt="Pick" />
       </div>
     </div>
