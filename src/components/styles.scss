@@ -177,6 +177,14 @@
   bottom: 16%;
   left: 50%;
   transform: translateX(-50%);
+
+  @media only screen and (max-width: utils.$mobile-width) {
+    bottom: 40%;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 .user-pick {
@@ -193,6 +201,11 @@
     &--item:last-child {
       grid-column: 1 / 3;
     }
+  }
+  @media only screen and (max-width: utils.$mobile-width) {
+    width: 414px;
+    height: 186px;
+    bottom: 48%;
   }
 }
 
@@ -228,6 +241,11 @@
   &--rock {
     .pick__image {
       border: 16px solid utils.$rock-from;
+    }
+  }
+  @media only screen and (max-width: utils.$mobile-width) {
+    &__image {
+      padding: 24px;
     }
   }
 }

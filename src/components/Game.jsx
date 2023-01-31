@@ -6,7 +6,5 @@ import useStore from "../store";
 export function Game() {
   const isPicked = useStore((state) => state.isPicked);
 
-  return (
-    <div className="game">{/* {isPicked ? <Result /> : <UserPick />} */}</div>
-  );
+  return <div className="game">{isPicked ? <Result /> : <UserPick />}</div>;
 }
