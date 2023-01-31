@@ -23,7 +23,7 @@ export function GetResult(userPick, housePick) {
   switch (userPick) {
     case "Paper":
       if (housePick === "Paper") return "Draw";
-      else if (housePick === "Rock") return "You Won";
+      else if (housePick === "Rock") return "You won";
       else return "You lose";
     case "Rock":
       if (housePick === "Paper") return "You lose";
