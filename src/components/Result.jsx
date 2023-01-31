@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import { Pick } from "./Pick";
 import useStore from "../store";
 import { RandomHousePick, GetResult } from "../helper";
@@ -18,6 +19,8 @@ export function Result() {
   const [housePicked, setHousePicked] = useState(false);
   const [result, setResult] = useState("");
   const [containerStyle, setContainerStyle] = useState({ width: "40%" });
+
+  const isMobile = useMediaQuery({ query: "(max-width: 414px)" });
 
   useEffect(() => {
     switch (userPick) {
@@ -43,6 +46,9 @@ export function Result() {
   }, []);
 
   useEffect(() => {
+    if (isMobile) {
+      setContainerStyle({ width: "100%" });
+    }
     if (housePick === "") return;
 
     switch (housePick) {
@@ -67,7 +73,12 @@ export function Result() {
     }
 
     setResult(gameResult);
-    setContainerStyle({ width: "60%" });
+
+    if (isMobile) {
+      setContainerStyle({ width: "100%" });
+    } else {
+      setContainerStyle({ width: "60%" });
+    }
   }, [housePicked]);
 
   useEffect(() => {
@@ -125,6 +136,19 @@ export function Result() {
           </div>
         ) : null}
       </div>
+      {result & isMobile ? (
+        <div className="result__show">
+          <div className="result__show__title">
+            {housePicked ? result : "..."}
+          </div>
+          <div
+            className="result__show__play-again"
+            onClick={() => setIsPicked(false)}
+          >
+            <span>Play Again</span>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

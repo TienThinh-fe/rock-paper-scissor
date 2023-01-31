@@ -336,13 +336,71 @@
       }
     }
   }
-
   .pick__image {
     background-color: rgba(255, 255, 255, 0.9);
     border-width: 20px;
     img {
       width: 80px;
       height: auto;
+    }
+  }
+
+  @media only screen and (max-width: utils.$mobile-width) {
+    top: 32%;
+    justify-content: space-around;
+    &__you,
+    &__house {
+      &__title {
+        font-size: 0.8rem;
+        text-align: center;
+        overflow-wrap: break-word;
+      }
+      &__pick {
+        width: 150px;
+        height: 150px;
+      }
+      &__overlay {
+        .one {
+          top: 24px;
+          width: 200px;
+          height: 200px;
+        }
+        .two {
+          top: -10px;
+          width: 280px;
+          height: 280px;
+        }
+        .three {
+          top: -48px;
+          width: 360px;
+          height: 360px;
+        }
+      }
+    }
+    &__show {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 160%;
+      &__title {
+        font-size: 3.2rem;
+      }
+      &__play-again {
+        width: 200px;
+        max-width: initial;
+        padding: 20px 0;
+        font-size: 1.2rem;
+      }
+    }
+    .pick__image {
+      border-width: 16px;
+      width: 80px;
+      height: 80px;
+      img {
+        width: 70px;
+        height: auto;
+        object-fit: cover;
+      }
     }
   }
 }
