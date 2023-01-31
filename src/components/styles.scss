@@ -7,7 +7,7 @@
 }
 
 .header {
-  width: 60%;
+  width: 50%;
   position: absolute;
   left: 50%;
   top: 40px;
@@ -141,10 +141,11 @@
   justify-content: center;
   align-items: flex-end;
   position: relative;
+  z-index: 2;
   &__image {
     background-color: rgba(255, 255, 255, 0.7);
     background-clip: padding-box;
-    padding: 40px;
+    padding: 48px;
     border-radius: 50%;
     transition: all 0.2s ease-in-out;
 
@@ -166,6 +167,97 @@
   &--rock {
     .pick__image {
       border: 16px solid utils.$rock-from;
+    }
+  }
+}
+
+.result {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  &__you,
+  &__house {
+    position: relative;
+    &__title {
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+    &__pick {
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+    &__overlay {
+      z-index: 1;
+      &--item {
+        background-color: rgba(255, 255, 255);
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .one {
+        top: 12px;
+        width: 300px;
+        height: 300px;
+        opacity: 8%;
+      }
+      .two {
+        top: -36px;
+        width: 400px;
+        height: 400px;
+        opacity: 4%;
+      }
+      .three {
+        top: -84px;
+        width: 500px;
+        height: 500px;
+        opacity: 2%;
+      }
+    }
+  }
+  &__show {
+    &__title {
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    &__play-again {
+      color: utils.$rock-to;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 12px 0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+
+  .pick__image {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-width: 20px;
+    img {
+      width: 80px;
+      height: auto;
     }
   }
 }
